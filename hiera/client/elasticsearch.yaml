@@ -1,0 +1,11 @@
+elasticsearch::ensure:       "present"
+elasticsearch::status:       "enabled"
+elasticsearch::restart_on_change: true
+elasticsearch::version:      "1.2.0-1"
+elasticsearch::java_install: true
+elasticsearch::manage_repo:  true
+elasticsearch::repo_version: "1.2"
+elasticsearch::logging_file: "puppet:///modules/logging/elasticsearch/logging.yml"
+elasticsearch::config:
+    node:
+        name: "elasticsearch001"

@@ -1,0 +1,25 @@
+{
+  "name": "devopsil-logging",
+  "version": "0.1.0",
+  "author": "Evgeny Zislis <evgeny@devops.co.il>",
+  "summary": "Logging and log event data aggregation.",
+  "license": "Apache 2.0",
+  "source": "",
+  "project_page": null,
+  "issues_url": null,
+  "dependencies": [
+    {
+      "name": "puppetlabs-stdlib",
+      "version_range": ">= 1.0.0"
+    },
+    {
+      "name": "elasticsearch-elasticsearch",
+      "version_range": ">= 0.3.0"
+    },
+    {
+      "name": "elasticsearch-logstash",
+      "version_range": ">= 0.5.0"
+    }
+  ]
+}
+

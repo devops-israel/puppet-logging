@@ -1,0 +1,4 @@
+logstash::manage_repo:  true
+logstash::repo_version: "1.4"
+logstash::java_install: true
+logstash::version:      "1.4.1-1_bd507eb"

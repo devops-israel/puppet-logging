@@ -1,0 +1,10 @@
+---
+:backends: - yaml
+
+:hierarchy:
+  - client/%{clientcert}
+  - environment/%{env}
+  - global
+
+:yaml:
+  :datadir: /opt/puppet/hiera

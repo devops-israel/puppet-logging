@@ -1,0 +1,19 @@
+### File managed with puppet ###
+
+es.logger.level: INFO
+rootLogger: INFO, socketappender
+
+# -------------------------------------------------------------------------------
+
+additivity:
+  index.search.slowlog: false
+  index.indexing.slowlog: false
+
+appender:
+  socketappender:
+    type: org.apache.log4j.net.SocketAppender
+    port: 4560
+    remoteHost: logstash
+    layout:
+      type: pattern
+      conversionPattern: "[%d{ISO8601}][%-5p][%-25c] %m%n"
