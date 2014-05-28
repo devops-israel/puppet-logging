@@ -11,9 +11,8 @@ class kibana {
   }
 
   file { "/etc/nginx/sites-enabled/kibana.conf":
-    ensure  => "/usr/share/kibana3/sample/nginx.conf",
+    source  => "puppet:///modules/kibana/kibana-nginx.conf",
     notify  => Service["nginx"],
-    require => [ Archive["kibana"], File["/usr/share/kibana3"] ],
   }
 
   file { "/etc/nginx/conf.d/default.conf":
