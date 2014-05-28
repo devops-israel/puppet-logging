@@ -1,17 +1,26 @@
 class kibana {
-  package { [ "gcc-c++", "ruby-devel" ]: }
-  -> vcsrepo { "/usr/share/kibana3":
+
+  archive { "kibana":
     ensure   => present,
-    provider => git,
-    source   => "https://github.com/elasticsearch/kibana",
-    revision => "v3.1.0",
+    url      => "https://download.elasticsearch.org/kibana/kibana/kibana-3.1.0.tar.gz",
+    checksum => false,
+    target   => "/usr/share/kibana"
   }
-  -> class { "::nginx": }
-  -> file { "/etc/nginx/conf.d/default.conf":
+  -> file { "/usr/share/kibana3":
+    ensure => "/usr/share/kibana/kibana-3.1.0",
+  }
+
+  file { "/etc/nginx/sites-enabled/kibana.conf":
+    ensure  => "/usr/share/kibana3/sample/nginx.conf",
+    notify  => Service["nginx"],
+    require => [ Archive["kibana"], File["/usr/share/kibana3"] ],
+  }
+
+  file { "/etc/nginx/conf.d/default.conf":
     ensure => absent,
+    notify => Service["nginx"],
   }
-  -> nginx::resource::vhost { 'kibana':
-    www_root => '/var/www/kibana'
-  }
+
+  class { "::nginx": }
 
 }

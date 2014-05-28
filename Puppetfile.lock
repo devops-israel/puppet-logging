@@ -1,6 +1,7 @@
 FORGE
   remote: http://forge.puppetlabs.com
   specs:
+    camptocamp/archive (0.0.1)
     elasticsearch/elasticsearch (0.3.2)
       puppetlabs/stdlib (>= 3.2.0)
     elasticsearch/logstash (0.5.1)
@@ -18,13 +19,12 @@ FORGE
     puppetlabs/ntp (3.0.3)
       puppetlabs/stdlib (>= 0.1.6)
     puppetlabs/stdlib (4.2.1)
-    puppetlabs/vcsrepo (0.2.0)
 
 DEPENDENCIES
+  camptocamp/archive (>= 0)
   elasticsearch/elasticsearch (>= 0)
   elasticsearch/logstash (>= 0)
   jfryman/nginx (>= 0)
   puppetlabs/ntp (>= 0)
   puppetlabs/stdlib (>= 0)
-  puppetlabs/vcsrepo (>= 0)
 
