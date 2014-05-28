@@ -18,6 +18,7 @@ FORGE
     puppetlabs/ntp (3.0.3)
       puppetlabs/stdlib (>= 0.1.6)
     puppetlabs/stdlib (4.2.1)
+    puppetlabs/vcsrepo (0.2.0)
 
 DEPENDENCIES
   elasticsearch/elasticsearch (>= 0)
@@ -25,4 +26,5 @@ DEPENDENCIES
   jfryman/nginx (>= 0)
   puppetlabs/ntp (>= 0)
   puppetlabs/stdlib (>= 0)
+  puppetlabs/vcsrepo (>= 0)
 
